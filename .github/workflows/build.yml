@@ -19,6 +19,9 @@ jobs:
       run: |
         cd ./dist
         git init
+        git add .
         git commit -m "release"
         git remote add origin git@github.com:lammyself/view-result.git
+        git config --global user.email "1766936395@qq.com"
+        git config --global user.name "darly"
         git push -u origin
