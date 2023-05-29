@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
     - name: in-dir
-      run: cd /home/runner/work/infra-club-web
+      run: cd ../
     - name: addnode # ESLint 检测代码质量
       uses: actions/setup-node@v3 # 使用node环境
       with:
