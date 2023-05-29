@@ -2,7 +2,7 @@ name: lint # ci文件的名字
 on: 
   push # 触发CI的条件
 jobs: 
-  preview:
+  lint:
     name: lint
     runs-on: ubuntu-latest
     steps: 
@@ -12,5 +12,5 @@ jobs:
         node-version: 18
     - name: addpackage
       run: yarn
-    - name: run-preview
-      run: yarn preview
+    - name: yarn add 
+      run: yarn build
