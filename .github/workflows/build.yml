@@ -14,7 +14,12 @@ jobs:
     - name: addpackage
       run: yarn
     - name: build
+      run: yarn build
+    - name: release
       run: |
-        pwd
-        ls
-        yarn build
+        cd ./dist
+        git init
+        git commit -m "release"
+        git branch -M main
+        git remote add origin git@github.com:lammyself/view-result.git
+        git push -u origin main
