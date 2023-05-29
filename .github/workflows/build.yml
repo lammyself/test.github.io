@@ -1,13 +1,10 @@
 name: lint # ci文件的名字
 on: 
   push # 触发CI的条件
-jobs:  # CI/CD通过执行一个个的Job来完成每个阶段的工作，这里配置每个Jobs
-  install:
-  name: install-package
-   runs-on: ubuntu-latest
-   steps: 
-    - name: ESLintCode # ESLint 检测代码质量
-     uses: actions/setup-node@v2 # 使用node环境
-    - run: yarn # 执行命令安装依赖，也可以执行shell脚本./.github/scripts/build.sh
-    - run: yarn preview # 安装全局ESLint并检测代码
-
+jobs: 
+  add-package:
+    name: add-package
+    runs-on: ubuntu-latest
+    steps: 
+    - name: addnode # ESLint 检测代码质量
+      uses: actions/setup-node@v2 # 使用node环境
