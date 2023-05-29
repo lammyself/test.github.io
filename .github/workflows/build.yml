@@ -2,23 +2,15 @@ name: lint # ci文件的名字
 on: 
   push # 触发CI的条件
 jobs: 
-  add-node:
-    name: add-node
+  preview:
+    name: lint
     runs-on: ubuntu-latest
     steps: 
     - name: addnode # ESLint 检测代码质量
-      uses: actions/setup-node@v2 # 使用node环境
-  add-package:
-    name: add-package
-    runs-on: ubuntu-latest
-    needs: add-node
-    steps:
-      - name: addpackage
-        run: yarn
-  preview:
-    name: preview
-    runs-on: ubuntu-latest
-    needs: [add-node, add-package]
-    steps:
-      - name: preview
-        run: yarn preview
+      uses: actions/setup-node@v3 # 使用node环境
+      with:
+        node-version: 18
+    - name: addpackage
+      run: yarn
+    - name: run-preview
+      run: yarn preview
