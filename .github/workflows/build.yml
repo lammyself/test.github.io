@@ -15,5 +15,5 @@ jobs:
     - name: build
       run: |
         pwd
-        ll
+        ls
         yarn build
