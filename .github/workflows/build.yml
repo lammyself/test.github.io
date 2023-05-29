@@ -24,4 +24,4 @@ jobs:
         git add .
         git commit -m "release"
         git remote add origin git@github.com:lammyself/view-result.git
-        git push -u origin
+        git push --set-upstream origin master
