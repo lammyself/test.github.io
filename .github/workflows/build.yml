@@ -5,4 +5,4 @@ jobs:
     name: build
     runs-on: ubuntu-latest
     steps:
-      - uses: ./build_call.yml
+      - uses: ./build_call
