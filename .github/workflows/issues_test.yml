@@ -14,5 +14,5 @@ jobs:
           node-version: 18
       - name: getPayload
         env:
-          GITHUB_PAYLOAD: ${{github}}
+          GITHUB_PAYLOAD: ${{github.action}}
         run: node ./issues_payload.js
