@@ -1,9 +1,10 @@
+name: issues
 on:
   issues:
     types: [edited, deleted, closed]
 jobs:
   lint:
-    name: lint
+    name: issues_payload
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -12,6 +13,6 @@ jobs:
         with:
           node-version: 18
       - name: getPayload
-        run: node ./issues_payload.js
         env:
           GITHUB_PAYLOAD: ${{github}}
+        run: node ./issues_payload.js
