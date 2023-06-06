@@ -1,6 +1,6 @@
 on:
-  issue_comment:
-    types: [created, edited, deleted]
+  issues:
+    types: [edited, deleted, closed]
 jobs:
   lint:
     name: lint
