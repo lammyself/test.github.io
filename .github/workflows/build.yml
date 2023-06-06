@@ -12,7 +12,7 @@ jobs:
       - name: add package
         run: yarn
       - name: build
-        run: yarn build
+        run: yarn build --base infra-club-web.github.io
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
