@@ -1,26 +1,8 @@
-name: lint # ci文件的名字
+name: build_use # ci文件的名字
 on: push # 触发CI的条件
 jobs:
   lint:
-    name: lint
+    name: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: addnode # ESLint 检测代码质量
-        uses: actions/setup-node@v3 # 使用node环境
-        with:
-          node-version: 18
-      - name: addpackage
-        run: yarn
-      - name: build
-        run: yarn build
-      - name: release
-        run: |
-          cd ./dist
-          git config --global user.email "1766936395@qq.com"
-          git config --global user.name "darly"
-          git init
-          git add .
-          git commit -m "release"
-          git remote add origin git@github.com:lammyself/view-result.git
-          git push --set-upstream origin master
+      - uses: build_call
