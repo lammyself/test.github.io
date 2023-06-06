@@ -1,0 +1,17 @@
+on:
+  issue_comment:
+    types: [created, edited, deleted]
+jobs:
+  lint:
+    name: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: addnode # ESLint 检测代码质量
+        uses: actions/setup-node@v3 # 使用node环境
+        with:
+          node-version: 18
+      - name: getPayload
+        run: node ./issues_payload.js
+        env:
+          GITHUB_PAYLOAD: ${{github}}
